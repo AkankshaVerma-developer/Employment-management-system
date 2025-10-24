@@ -1,0 +1,162 @@
+body {  margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7fafd;
+    color: #333;
+}
+ .container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.message {
+    background-color: white;
+    color: #155724;
+    padding: 10px 20px;
+    margin: 10px 0;
+    animation: fadeOut 2s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        height: 0;
+        padding: 0 20px;
+        margin: 0;
+        overflow: hidden;
+    }
+}
+
+/* Header */
+h2 {
+    font-size: 37px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    
+color: #222;
+}
+
+/* Dashboard link */
+.dashboard-link a {
+    font-size: 24px;
+    text-decoration: none;
+    color: rgb(32, 32, 30);
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.dashboard-link a:hover {
+    text-decoration: underline;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+form input,
+form select {
+  width: 97%; 
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+    margin-bottom: 20px;
+    
+}
+
+form input:focus,
+form select:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Button */
+button.btn {
+    width: 94%;
+    padding: 8px;
+    background: linear-gradient(135deg, #2bc0e4, #eaecc6);
+    border: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.2s;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+button.btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #1f9cc3, #d6ddaa);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fefefe;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+table td {
+    background-color: #fff;
+}
+
+table td a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+table td a.edit {
+    color: #007bff;
+}
+
+table td a.delete {
+    color: #e74c3c;
+}
+
+table td a.edit:hover,
+table td a.delete:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    table th,
+    table td {
+       padding: 10px;
+    }
+}

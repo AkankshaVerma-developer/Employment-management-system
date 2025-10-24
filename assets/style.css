@@ -1,0 +1,328 @@
+/*--------------------------------------login-----------------------------------*/
+/* Reset default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1db1d5, #eff1cf);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.login-container {
+  background: #ffffffdd;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: slideIn 0.8s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+  animation: fadeIn 1.2s ease-in;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f8f8f8;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #2bc0e4;
+  box-shadow: 0 0 8px rgba(43, 192, 228, 0.4);
+  outline: none;
+  background-color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #2bc0e4, #eaecc6);
+  border: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #1f9cc3, #d6ddaa);
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 10px;
+  font-size: 14px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  button {
+    padding: 12px;
+  }
+}
+
+
+/*-------------------------------------dashboard----------------------------------------------------*/
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  overflow-x: hidden;
+}
+
+/* Container with sidebar and content */
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 30px 20px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+}
+.sidebar h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 40px;
+  color: #1abc9c;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  margin: 20px 0;
+}
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.sidebar ul li a:hover {
+  background: #1abc9c;
+  color: #fff;
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 240px;
+  padding: 40px;
+  height: 100vh;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Card layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 30px;
+  font-weight: bold;
+  color: #1abc9c;
+}
+
+/* Scrollbar style */
+.main-content::-webkit-scrollbar {
+  width: 10px;
+}
+.main-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+.main-content::-webkit-scrollbar-thumb {
+  background-color: #1abc9c;
+  border-radius: 5px;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    width: 200px;
+    transform: translateX(-100%);
+    z-index: 100;
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+/*---------------------------------------project------------------------------*/
+
+/* Container to hold form and table vertically */
+.project-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Project Form Styling */
+.project-form {
+    width: 100%;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Fields */
+.project-form input[type="text"],
+.project-form textarea {
+    padding: 14px 16px;
+    border: 1px solid #dcdfe3;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f8f9fb;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.project-form input:focus,
+.project-form textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Submit Button */
+.project-form button {
+    background: #3498db;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-form button:hover {
+    background: #2c80b4;
+}
+
+/* Project Table Styling */
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.project-table th,
+.project-table td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.project-table th {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.project-table tr:hover {
+    background-color: #f1f8ff;
+}
+
+/*-------------------------------------------------task---------------------------------------------*/
+
+/* 
